@@ -10,6 +10,7 @@ const FlavorTitle = () => {
         const secondTextSplit = SplitText.create(".second-text-split", {
             type: "chars",
         })
+
         gsap.from(firstTextSplit.chars, {
             yPercent: 200,
             stagger: 0.02,
@@ -18,16 +19,18 @@ const FlavorTitle = () => {
                 trigger: ".flavor-section",
                 start: "top 30%",
             }
-        })
+        });
+
         gsap.to(".flavor-text-scroll", {
             duration: 1,
+            opacity: 1,
             clipPath: "polygon(0% 0%,100% 0%,100% 100%,0% 100%)",
             ease: "circ.inOut",
             scrollTrigger: {
                 trigger: ".flavor-section",
                 start: "top 10%",
             }
-        })
+        });
 
         gsap.from(secondTextSplit.chars, {
             yPercent: 200,
@@ -37,7 +40,8 @@ const FlavorTitle = () => {
                 trigger: ".flavor-section",
                 start: "top 1%",
             }
-        })
+        });
+
     })
 
     return (
@@ -47,17 +51,15 @@ const FlavorTitle = () => {
             </div>
             <div
                 style={{
-                    clipPath: 'polygon(0% 0%,0% 0%,100% 100%,0% 100%)',
+                    clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"
                 }}
-                className="flavor-text-scroll">
+                className="flavor-text-scroll opacity-0">
                 <div className="bg-mid-brown pb-5 2xl:pt-0 pt-3 2xl:px-5 px-3">
                     <h2 className="text-milk">freaking</h2>
                 </div>
             </div>
             <div className="overflow-hidden 2xl:py-0 py-3 second-text-split">
                 <h1>delicious flavors</h1>
-
-
             </div>
         </div>
     )
