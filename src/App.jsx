@@ -1,10 +1,12 @@
 import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
+import HeroSection from './sections/HeroSection'
 import gsap from 'gsap';
 import { ScrollSmoother, ScrollTrigger } from 'gsap/all';
-import MessageSection from './components/MessageSection';
-import FlavorSection from './components/FlavorSection';
+import MessageSection from './sections/MessageSection';
+import FlavorSection from './sections/FlavorSection';
 import { useGSAP } from '@gsap/react';
+import NutritionSection from './sections/NutritionSection';
+import BenefitSection from './sections/BenefitSection';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -25,8 +27,10 @@ const App = () => {
           <HeroSection />
           <MessageSection />
           <FlavorSection />
+          <NutritionSection />
+          <BenefitSection />
         </div>
-      </div> 
+      </div>
     </main>
   )
 }
